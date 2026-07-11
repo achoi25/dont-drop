@@ -1,6 +1,5 @@
 from sentence_transformers import SentenceTransformer
 from scipy.spatial.distance import cosine, euclidean
-import numpy as np
 
 CONTROL = "i like spaghetti and meatballs"
 
@@ -20,8 +19,8 @@ while True:
     cos_sim = 1 - cos_dist
     euc_dist = euclidean(control_embedding, input_embedding)
 
-    print(f"\nControl:            \"{CONTROL}\"")
-    print(f"Input:              \"{user_input}\"")
+    print(f'\nControl:            "{CONTROL}"')
+    print(f'Input:              "{user_input}"')
     print(f"Cosine similarity:  {cos_sim:.4f}")
     print(f"Cosine distance:    {cos_dist:.4f}")
     print(f"Euclidean distance: {euc_dist:.4f}")
