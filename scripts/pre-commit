@@ -1,6 +1,16 @@
 #!/bin/sh
 set -e
 
+echo "--- backend ---"
+cd backend
 uv run ruff format --check .
 uv run ruff check .
 uv run ty check
+cd ..
+
+if [ -f frontend/package.json ]; then
+  echo "--- frontend ---"
+  cd frontend
+  npm run check
+  cd ..
+fi

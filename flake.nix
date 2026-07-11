@@ -15,6 +15,7 @@
           packages = [
             pkgs.google-cloud-sdk
             pkgs.uv
+            pkgs.nodejs_22
           ];
         };
       });
